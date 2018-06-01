@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html>
+<head>
+        <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
+        <link rel="stylesheet" href="styles.css" type="text/css"/>
+<style>
+
+@media screen and (max-width: 768px) {
+    .hbk-logo {
+        width: 70%;
+        margin-left: auto;
+        margin-right: auto;
+    }
+ 
+    .container {
+        width: 50%;
+    }
+    .where-logo {
+        width: 70%;
+        display: block;
+    }
+}
+    
+    .footer {
+    position: fixed;
+    left: 40px;
+    bottom: -4px;
+    width: 100%;
+    color: white;
+    text-align: left;
+    font-size: 10px;
+    
+    }
+        form {border: 3px solid #f1f1f1;}
+        
+        input[type=text], input[type=password] {
+            width: 100%;
+            padding: 12px 20px;
+            margin: 8px 0;
+            display: inline-block;
+            border: 1px solid #ccc;
+            box-sizing: border-box;
+        }
+        
+        button {
+            background-color: #4CAF50;
+            color: white;
+            padding: 14px 20px;
+            margin: 8px 0;
+            border: none;
+            cursor: pointer;
+            width: 100%;
+        }
+        
+        button:hover {
+            opacity: 0.9;
+        }
+        
+        
+        .container {
+            padding: 12px;
+            text-align: left;        
+        }
+        
+        span.psw {
+            float: right;
+            padding-top: 16px;
+        }
+
+
+</style>
+
+
+</head>
+
+<body>
+
+    <div class="footer">
+            <p><i>&copy; 2017 HBK Engineering, LLC | Version |
+            <a href="http://help.hbkapps.com/" target="_blank">Help</a></i></p>
+      </div>
+
+    </div>
+        <div class="hbk-logo">
+            <img src="images/hbk-logo.png" alt="hbk-logo" class="hbk-logo">
+        </div>
+
+        <div class="background">
+                <img src="images/chicago2.png" alt="background">
+        </div>
+
+        
+
+        <div class="container">
+            <div class="where-logo">
+                <img src="images/hbk-where-logo.png" alt="hbk-where-logo" class="where-logo">
+            </div>
+            
+            <form>
+                <label for="uname"><b>Sign In</b></label>
+                <input type="text" placeholder="Enter Username" name="uname" required>
+                <input type="password" placeholder="Enter Password" name="psw" required>
+                <button type="submit">Login</button>
+                <span class="psw"><a href="#">Forgot Password?</a></span>
+            </form>
+            <div class="clearfix"/>
+        </div>
+    </div>
+
+</body>
+
+</html>
