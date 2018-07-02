@@ -1,0 +1,24 @@
+{
+    "name": "hbkauth-client",
+    "version": "2.1.5-1",
+    "description": "",
+    "main": "index.js",
+    "scripts": {
+      "deploy:assets": "BUCKET=client.hbkauth.${STAGE:-staging}.hbkapps.com PREFIX=$npm_package_version ./deploy.sh",
+      "deploy:infra": "npm run cf:update",
+      "start": "NODE_ENV=${STAGE:-staging} harp server public --port 8100",
+      "build": "NODE_ENV=${STAGE:-staging} harp compile public www",
+      "cf:update": "aws cloudformation update-stack --region us-east-1 --stack-name HbkAuth-Client-${STAGE:-staging}  --template-body file://${PWD}/cloudformation.yaml --parameters  ParameterKey=Stage,ParameterValue=${STAGE:-staging}",
+      "cf:validate": "aws cloudformation validate-template --region us-east-1 --template-body file://${PWD}/cloudformation.yaml",
+      "cf:create": "aws cloudformation create-stack  --stack-name HbkAuth-Client-${STAGE:-staging}  --template-body file://${PWD}/cloudformation.yaml --parameters  ParameterKey=Stage,ParameterValue=${STAGE:-staging}",
+      "test": "echo \"Error: no test specified\" && exit 1"
+    },
+    "author": "",
+    "license": "UNLICENSED",
+    "devDependencies": {
+      "harp": "^0.24.1",
+      "node": "^6.14.1",
+      "serverless": "^1.23.0"
+    },
+    "dependencies": {}
+  }
