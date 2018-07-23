@@ -3,7 +3,6 @@ import chicago2 from './images/chicago2.PNG';
 import hbkLogo from './images/hbkLogo.PNG';
 import hbkWhereLogo from './images/hbkWhereLogo.PNG';
 import styled from 'styled-components';
-import './LoginContainer.css';
 
 const LoginScreen = styled.div`
 position: fixed;
