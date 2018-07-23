@@ -58,28 +58,13 @@ class LoginContainer extends Component {
     this.setState({ isLoaded: true })
   }
 
-  handleInputChange = (e) => {
-    const { name, value } = e.target;
-    this.setState({
-      [name]: value
-    });
-  }
-
-
-
-  // .loginForm{
-  //     width: 100%;
-  //     background-color : rgba(26, 25, 25, 0.85);
-  //    padding: 10px;
-  //    color: white;
-  //    border-radius: 10px
+  // handleInputChange = (e) => {
+  //   const { name, value } = e.target;
+  //   this.setState({
+  //     [name]: value
+  //   });
   // }
 
-
-  // .footer{
-
-
-  // }
   render() {
     const { error, isLoaded } = this.state;
     if (error) {
