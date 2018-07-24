@@ -4,7 +4,7 @@ import LoginContainer from '../components/Login/LoginContainer'
 
 export default () => (
   <div>
-  <Head title="Home" />
+  <Head title="HBK Login" />
   <LoginContainer/>
   </div>
 )
