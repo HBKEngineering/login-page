@@ -1,20 +1,18 @@
 import React, { Component } from 'react';
-import chicago2 from './images/chicago2.PNG';
-import hbkLogo from './images/hbkLogo.PNG';
-import hbkWhereLogo from './images/hbkWhereLogo.PNG';
 import styled from 'styled-components';
+import Link from 'next/link'
 
 const LoginScreen = styled.div`
 position: fixed;
 width: 100%;
 height: 100vh;
-background-image: url(${chicago2});
+background-image: url('/static/chicago2.PNG');
 background-size: cover;
-background-position: right 0px
+background-position: right 0px;
+font-family: Roboto, sans-serif;
 `;
 const LoginBox = styled.div`
   margin: 50vh 30px 0 30px;
-  float: left;
   width: 35% ;
   vertical-align: middle;
   padding: 10px;
@@ -39,8 +37,24 @@ const LoginButton = styled.button`
 `;
 const Footer = styled.footer`
 color: white;
-font-size: 16px;
-margin-top: 97vh;`
+font-size: 12px;
+position: fixed;
+bottom: 10px;
+left : 15px
+`;
+const LoginHeader = styled.p`
+float: left;
+margin: 8px 50px 8px 8px
+`;
+const HbkLogoImg = styled.img`
+width: 20%;
+float: right;
+margin: 20px 35px
+`;
+const HbkWhereImg = styled.img`
+width : 100%
+`;
+
 
 class LoginContainer extends Component {
   constructor(props) {
@@ -75,20 +89,19 @@ class LoginContainer extends Component {
     else {
       return (
         <LoginScreen>
-          <img src={hbkLogo} alt={hbkLogo} style={{ width: '20%', float: 'right', margin: '20px 35px' }} />
+          <HbkLogoImg src='/static/hbkLogo.PNG' alt='hbkLogo'/>
           <LoginBox>
-            <img src={hbkWhereLogo} alt={hbkWhereLogo} style={{ width: '100%' }} />
+            <HbkWhereImg src='/static/hbkWhereLogo.PNG' alt='hbkWhereLogo'/>
             <LoginForm>
-              <p style={{ float: 'left', margin: '8px 100px 8px 8px' }}>Sign In</p>
+              <LoginHeader>Sign In</LoginHeader>
               <LoginInput placeholder={'Enter Username'} />
               <LoginInput placeholder={'Enter Password'} />
               <LoginButton> Login </LoginButton>
             </LoginForm>
           </LoginBox>
           <Footer>
-            <p>&copy; 2018 HBK Engineering, LLC | Version 2.1.6 |
-                <a href="http://help.hbkapps.com/" target="_blank">Help</a>
-            </p>
+            &copy; {new Date().getFullYear()} HBK Engineering, LLC | Version 2.1.6 |
+                <Link href="http://help.hbkapps.com/" target="_blank"><a>Help</a></Link>
           </Footer>
         </LoginScreen>
       );
