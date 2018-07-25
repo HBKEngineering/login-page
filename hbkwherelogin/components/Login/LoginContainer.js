@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import styled from 'styled-components';
-import Link from 'next/link'
+import Link from 'next/link';
+import Intercom from 'react-intercom';
 
 const LoginScreen = styled.div`
 position: fixed;
@@ -56,7 +57,7 @@ float: left;
 margin: 8px 50px 8px 8px
 `;
 const HbkLogoImg = styled.img`
-width: 20%;
+width: 35%;
 float: right;
 margin: 20px 35px
 `;
@@ -73,7 +74,12 @@ class LoginContainer extends Component {
       isLoaded: false,
       username: '',
       password: '',
-      firstVisit: true
+      firstVisit: true,
+      appUser: {
+        id: '',
+        email: '',
+        name: ''
+      }
     }
   }
 
@@ -82,6 +88,9 @@ class LoginContainer extends Component {
       this.setState({ firstVisit: false })
     };
     this.setState({ isLoaded: true });
+  //   window.Intercom('boot', {
+  //     app_id: 'gwrahg7n'
+  //  });
   }
 
   handleFirstVisitClick() {
@@ -104,15 +113,35 @@ class LoginContainer extends Component {
       return <div>Loading...</div>;
     }
     else {
+      //code from https://www.npmjs.com/package/react-intercom
+      // const { appUser } = this.props;
+    
+      const user = {
+        user_id: 'csteinborn',
+        email: 'csteinborn@hbkapps.com',
+        name: 'Codi'
+      };    
+      // const user = {
+      //   user_id: this.state.appUser.id,
+        // email: this.state.appUser.email,
+        // name: this.state.appUser.name
+        // user_id: 'csteinborn',
+      //   email: this.state.appUser.email,
+      //   name: this.state.appUser.name
+      // };
+
       return (
         <div>
           {this.state.firstVisit ?
             <LoginScreen>
               <NewLookModal>
                 <h3>Welcome to the New HBK Where Sign In Page</h3>
-                <p>We’ve enhanced the look of this page. Use your regular login information to enter.</p>
+                <p>We’ve enhanced the look of this page. Use your existing login information to enter.</p>
                 <p>Questions? Click here to chat</p>
-                <LoginButton onClick={() => { this.handleFirstVisitClick() }}>Got it</LoginButton>
+                <div>Intercom
+              <Intercom appID="gwrahg7n" { ...user }> Intercom HERE</Intercom>
+              </div>
+                <LoginButton onClick={() => { this.handleFirstVisitClick() }}>GOT IT</LoginButton>
               </NewLookModal>
             </LoginScreen> :
             <LoginScreen>
@@ -123,7 +152,7 @@ class LoginContainer extends Component {
                   <LoginHeader>Sign In</LoginHeader>
                   <LoginInput placeholder={'Enter Username'} />
                   <LoginInput placeholder={'Enter Password'} />
-                  <LoginButton> Login </LoginButton>
+                  <LoginButton> LOGIN </LoginButton>
                 </LoginForm>
               </LoginBox>
             </LoginScreen>
