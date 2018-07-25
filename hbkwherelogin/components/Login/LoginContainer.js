@@ -12,10 +12,9 @@ background-position: right 0px;
 font-family: Roboto, sans-serif;
 `;
 const NewLookModal = styled.div`
-font-size: 25px;
 width: 50%;
 padding: 30px;
-margin : 0 auto;
+margin : 50px auto;
 text-align : center;
 background-color : #f5f5f5e6;
 color: #0d203d;

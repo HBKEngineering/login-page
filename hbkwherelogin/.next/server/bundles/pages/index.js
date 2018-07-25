@@ -85,7 +85,7 @@ module.exports =
 var _jsxFileName = "/Users/codisteinborn/Desktop/Github/login-page/hbkwherelogin/components/Login/LoginContainer.js";
 
 var _templateObject = /*#__PURE__*/ _taggedTemplateLiteral(["\nposition: fixed;\nwidth: 100%;\nheight: 100vh;\nbackground-image: url('/static/chicago2.PNG');\nbackground-size: cover;\nbackground-position: right 0px;\nfont-family: Roboto, sans-serif;\n"]),
-    _templateObject2 = /*#__PURE__*/ _taggedTemplateLiteral(["\nfont-size: 25px;\nwidth: 50%;\npadding: 30px;\nmargin : 0 auto;\ntext-align : center;\nbackground-color : #f5f5f5e6;\ncolor: #0d203d;\n"]),
+    _templateObject2 = /*#__PURE__*/ _taggedTemplateLiteral(["\nwidth: 50%;\npadding: 30px;\nmargin : 50px auto;\ntext-align : center;\nbackground-color : #f5f5f5e6;\ncolor: #0d203d;\n"]),
     _templateObject3 = /*#__PURE__*/ _taggedTemplateLiteral(["\n  margin: 50vh 30px 0 30px;\n  width: 35% ;\n  vertical-align: middle;\n  padding: 10px;\n"]),
     _templateObject4 = /*#__PURE__*/ _taggedTemplateLiteral(["\n  width: 100%;\n  background-color : rgba(26, 25, 25, 0.85);\n  padding: 10px;\n  color: white;\n  border-radius: 10px\n"]),
     _templateObject5 = /*#__PURE__*/ _taggedTemplateLiteral(["\n  width: 85%;\n  height : 30px;\n  margin: 5px 0;\n"]),
@@ -186,46 +186,46 @@ function (_Component) {
         return __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement("div", {
           __source: {
             fileName: _jsxFileName,
-            lineNumber: 102
+            lineNumber: 101
           }
         }, "Error: ", error.message);
       } else if (!isLoaded) {
         return __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement("div", {
           __source: {
             fileName: _jsxFileName,
-            lineNumber: 105
+            lineNumber: 104
           }
         }, "Loading...");
       } else {
         return __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement("div", {
           __source: {
             fileName: _jsxFileName,
-            lineNumber: 109
+            lineNumber: 108
           }
         }, this.state.firstVisit ? __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(LoginScreen, {
           __source: {
             fileName: _jsxFileName,
-            lineNumber: 111
+            lineNumber: 110
           }
         }, __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(NewLookModal, {
           __source: {
             fileName: _jsxFileName,
-            lineNumber: 112
+            lineNumber: 111
           }
         }, __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement("h3", {
           __source: {
             fileName: _jsxFileName,
-            lineNumber: 113
+            lineNumber: 112
           }
         }, "Welcome to the New HBK Where Sign In Page"), __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement("p", {
           __source: {
             fileName: _jsxFileName,
-            lineNumber: 114
+            lineNumber: 113
           }
         }, "We\u2019ve enhanced the look of this page. Use your regular login information to enter."), __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement("p", {
           __source: {
             fileName: _jsxFileName,
-            lineNumber: 115
+            lineNumber: 114
           }
         }, "Questions? Click here to chat"), __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(LoginButton, {
           onClick: function onClick() {
@@ -233,75 +233,75 @@ function (_Component) {
           },
           __source: {
             fileName: _jsxFileName,
-            lineNumber: 116
+            lineNumber: 115
           }
         }, "Got it"))) : __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(LoginScreen, {
           __source: {
             fileName: _jsxFileName,
-            lineNumber: 119
+            lineNumber: 118
           }
         }, __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(HbkLogoImg, {
           src: "/static/hbkLogo.PNG",
           alt: "hbkLogo",
           __source: {
             fileName: _jsxFileName,
-            lineNumber: 120
+            lineNumber: 119
           }
         }), __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(LoginBox, {
           __source: {
             fileName: _jsxFileName,
-            lineNumber: 121
+            lineNumber: 120
           }
         }, __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(HbkWhereImg, {
           src: "/static/hbkWhereLogo.PNG",
           alt: "hbkWhereLogo",
           __source: {
             fileName: _jsxFileName,
-            lineNumber: 122
+            lineNumber: 121
           }
         }), __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(LoginForm, {
           __source: {
             fileName: _jsxFileName,
-            lineNumber: 123
+            lineNumber: 122
           }
         }, __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(LoginHeader, {
           __source: {
             fileName: _jsxFileName,
-            lineNumber: 124
+            lineNumber: 123
           }
         }, "Sign In"), __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(LoginInput, {
           placeholder: 'Enter Username',
           __source: {
             fileName: _jsxFileName,
-            lineNumber: 125
+            lineNumber: 124
           }
         }), __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(LoginInput, {
           placeholder: 'Enter Password',
           __source: {
             fileName: _jsxFileName,
-            lineNumber: 126
+            lineNumber: 125
           }
         }), __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(LoginButton, {
           __source: {
             fileName: _jsxFileName,
-            lineNumber: 127
+            lineNumber: 126
           }
         }, " Login ")))), __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(Footer, {
           __source: {
             fileName: _jsxFileName,
-            lineNumber: 132
+            lineNumber: 131
           }
         }, "\xA9 ", new Date().getFullYear(), " HBK Engineering, LLC | Version 2.1.6 |", __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_2_next_link___default.a, {
           href: "http://help.hbkapps.com/",
           target: "_blank",
           __source: {
             fileName: _jsxFileName,
-            lineNumber: 134
+            lineNumber: 133
           }
         }, __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement("a", {
           __source: {
             fileName: _jsxFileName,
-            lineNumber: 134
+            lineNumber: 133
           }
         }, "Help"))));
       }
