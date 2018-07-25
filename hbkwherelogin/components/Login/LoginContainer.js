@@ -41,7 +41,7 @@ const LoginForm = styled.form`
   border-radius: 10px;
   display: grid;
   grid-template-columns: auto;
-  grid-template-rows: 20% 20% 20% 20% 20%;
+  grid-template-rows: auto auto auto auto auto;
   
   @media (max-width: 1025px) {
     width: 100%;
@@ -66,11 +66,18 @@ const PasswordInput = styled.input`
 `;
 const LoginButton = styled.button`
   background-color : rgb(0, 155, 0);
-  padding: 10px;
   color: white;
   grid-row : 4
   @media (max-width: 1025px) {
-    grid-column: 2
+    grid-column: 2;
+  }
+`;
+const NewLookButton = styled.button`
+  background-color : rgb(0, 155, 0);
+  color: white;
+  padding: 10px;
+  @media (max-width: 1025px) {
+    grid-column: 2;
   }
 `;
 const Footer = styled.footer`
@@ -79,18 +86,23 @@ font-family: Roboto, sans-serif;
 font-size: 12px;
 position: fixed;
 bottom: 10px;
-left : 15px
+left : 15px;
+width: 100%;
+text-align: center
 `;
 const SignInHeader = styled.p`
 grid-row : 1;
 grid-column : 1;
+margin: 0;
 @media (max-width: 1025px) {
-  font-size : 15px;
-  grid-column: 2
+  grid-column: 2;
+  margin: auto;
 }
 `;
 const Questions = styled.p`
-grid-row : 5
+grid-row : 5;
+text-align : center;
+margin: auto;
 @media (max-width: 1025px) {
   grid-column: 1 / span 3
 }
@@ -127,9 +139,9 @@ class LoginContainer extends Component {
       this.setState({ firstVisit: false })
     };
     this.setState({ isLoaded: true });
-  //   window.Intercom('boot', {
-  //     app_id: 'gwrahg7n'
-  //  });
+    //   window.Intercom('boot', {
+    //     app_id: 'gwrahg7n'
+    //  });
   }
 
   handleFirstVisitClick() {
@@ -154,17 +166,17 @@ class LoginContainer extends Component {
     else {
       //code from https://www.npmjs.com/package/react-intercom
       // const { appUser } = this.props;
-    
+
       const user = {
         user_id: '',
         email: '',
         name: ''
-      };    
+      };
       // const user = {
       //   user_id: this.state.appUser.id,
-        // email: this.state.appUser.email,
-        // name: this.state.appUser.name
-        // user_id: 'csteinborn',
+      // email: this.state.appUser.email,
+      // name: this.state.appUser.name
+      // user_id: 'csteinborn',
       //   email: this.state.appUser.email,
       //   name: this.state.appUser.name
       // };
@@ -176,7 +188,7 @@ class LoginContainer extends Component {
               <NewLookModal>
                 <h3>Welcome to the New HBK Where Sign In Page</h3>
                 <p>We’ve enhanced the look of this page. Use your existing login information to enter.</p>
-                <LoginButton onClick={() => { this.handleFirstVisitClick() }}>GOT IT</LoginButton>
+                <NewLookButton onClick={() => { this.handleFirstVisitClick() }}>GOT IT</NewLookButton>
               </NewLookModal>
             </LoginScreen> :
             <LoginScreen>
@@ -185,12 +197,12 @@ class LoginContainer extends Component {
                 <HbkWhereImg src='/static/hbkWhereLogo.PNG' alt='hbkWhereLogo' />
                 <LoginForm>
                   <SignInHeader>Sign In</SignInHeader>
-                  <UsernameInput placeholder={'Enter Username'} />
+                  <UsernameInput placeholder={`Enter Username`} />
                   <PasswordInput placeholder={'Enter Password'} />
                   <LoginButton> LOGIN </LoginButton>
                   <Questions>
                     Questions? Click here to chat.
-                  <Intercom appID="gwrahg7n" { ...user }> Intercom HERE</Intercom>
+                  <Intercom appID="gwrahg7n" {...user}> Intercom HERE</Intercom>
                   </Questions>
                 </LoginForm>
               </LoginBox>
