@@ -11,6 +11,15 @@ background-size: cover;
 background-position: right 0px;
 font-family: Roboto, sans-serif;
 `;
+const NewLookModal = styled.div`
+font-size: 25px;
+width: 50%;
+padding: 30px;
+margin : 0 auto;
+text-align : center;
+background-color : #f5f5f5e6;
+color: #0d203d;
+`
 const LoginBox = styled.div`
   margin: 50vh 30px 0 30px;
   width: 35% ;
@@ -37,6 +46,7 @@ const LoginButton = styled.button`
 `;
 const Footer = styled.footer`
 color: white;
+font-family: Roboto, sans-serif;
 font-size: 12px;
 position: fixed;
 bottom: 10px;
@@ -63,14 +73,22 @@ class LoginContainer extends Component {
       error: null,
       isLoaded: false,
       username: '',
-      password: ''
+      password: '',
+      firstVisit: true
     }
   }
 
   componentDidMount() {
-    this.setState({ isLoaded: true })
+    if (localStorage.getItem("HBKWhereFirstVisit")) {
+      this.setState({ firstVisit: false })
+    };
+    this.setState({ isLoaded: true });
   }
 
+  handleFirstVisitClick() {
+    this.setState({ firstVisit: false });
+    // localStorage.setItem("HBKWhereFirstVisit", true);
+  }
   // handleInputChange = (e) => {
   //   const { name, value } = e.target;
   //   this.setState({
@@ -88,22 +106,34 @@ class LoginContainer extends Component {
     }
     else {
       return (
-        <LoginScreen>
-          <HbkLogoImg src='/static/hbkLogo.PNG' alt='hbkLogo'/>
-          <LoginBox>
-            <HbkWhereImg src='/static/hbkWhereLogo.PNG' alt='hbkWhereLogo'/>
-            <LoginForm>
-              <LoginHeader>Sign In</LoginHeader>
-              <LoginInput placeholder={'Enter Username'} />
-              <LoginInput placeholder={'Enter Password'} />
-              <LoginButton> Login </LoginButton>
-            </LoginForm>
-          </LoginBox>
+        <div>
+          {this.state.firstVisit ?
+            <LoginScreen>
+              <NewLookModal>
+                <h3>Welcome to the New HBK Where Sign In Page</h3>
+                <p>We’ve enhanced the look of this page. Use your regular login information to enter.</p>
+                <p>Questions? Click here to chat</p>
+                <LoginButton onClick={() => { this.handleFirstVisitClick() }}>Got it</LoginButton>
+              </NewLookModal>
+            </LoginScreen> :
+            <LoginScreen>
+              <HbkLogoImg src='/static/hbkLogo.PNG' alt='hbkLogo' />
+              <LoginBox>
+                <HbkWhereImg src='/static/hbkWhereLogo.PNG' alt='hbkWhereLogo' />
+                <LoginForm>
+                  <LoginHeader>Sign In</LoginHeader>
+                  <LoginInput placeholder={'Enter Username'} />
+                  <LoginInput placeholder={'Enter Password'} />
+                  <LoginButton> Login </LoginButton>
+                </LoginForm>
+              </LoginBox>
+            </LoginScreen>
+          }
           <Footer>
             &copy; {new Date().getFullYear()} HBK Engineering, LLC | Version 2.1.6 |
                 <Link href="http://help.hbkapps.com/" target="_blank"><a>Help</a></Link>
           </Footer>
-        </LoginScreen>
+        </div>
       );
     }
   }

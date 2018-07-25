@@ -67,119 +67,33 @@ module.exports =
 /******/ 	__webpack_require__.p = "";
 /******/
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = 2);
+/******/ 	return __webpack_require__(__webpack_require__.s = 3);
 /******/ })
 /************************************************************************/
-/******/ ([
-/* 0 */
-/***/ (function(module, exports) {
+/******/ ({
 
-module.exports = require("react");
-
-/***/ }),
-/* 1 */
-/***/ (function(module, exports) {
-
-module.exports = require("next/link");
-
-/***/ }),
-/* 2 */
-/***/ (function(module, exports, __webpack_require__) {
-
-module.exports = __webpack_require__(3);
-
-
-/***/ }),
-/* 3 */
+/***/ "./components/Login/LoginContainer.js":
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_react__ = __webpack_require__("react");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_react___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_react__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_styled_components__ = __webpack_require__("styled-components");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_styled_components___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_1_styled_components__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_next_link__ = __webpack_require__("next/link");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_next_link___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_2_next_link__);
+var _jsxFileName = "/Users/codisteinborn/Desktop/Github/login-page/hbkwherelogin/components/Login/LoginContainer.js";
 
-// EXTERNAL MODULE: external "react"
-var external__react_ = __webpack_require__(0);
-var external__react__default = /*#__PURE__*/__webpack_require__.n(external__react_);
-
-// EXTERNAL MODULE: external "next/link"
-var link_ = __webpack_require__(1);
-var link__default = /*#__PURE__*/__webpack_require__.n(link_);
-
-// EXTERNAL MODULE: external "next/head"
-var head_ = __webpack_require__(4);
-var head__default = /*#__PURE__*/__webpack_require__.n(head_);
-
-// EXTERNAL MODULE: external "prop-types"
-var external__prop_types_ = __webpack_require__(5);
-var external__prop_types__default = /*#__PURE__*/__webpack_require__.n(external__prop_types_);
-
-// CONCATENATED MODULE: ./components/head.js
-
-
-
-var defaultDescription = '';
-var defaultOGURL = '';
-var defaultOGImage = '';
-
-var head_Head = function Head(props) {
-  return external__react__default.a.createElement(head__default.a, null, external__react__default.a.createElement("meta", {
-    charSet: "UTF-8"
-  }), external__react__default.a.createElement("title", null, props.title || ''), external__react__default.a.createElement("meta", {
-    name: "description",
-    content: props.description || defaultDescription
-  }), external__react__default.a.createElement("meta", {
-    name: "viewport",
-    content: "width=device-width, initial-scale=1"
-  }), external__react__default.a.createElement("link", {
-    rel: "icon",
-    href: "/static/where-favicon.png"
-  }), external__react__default.a.createElement("link", {
-    href: "https://fonts.googleapis.com/css?family=Roboto",
-    rel: "stylesheet"
-  }), external__react__default.a.createElement("meta", {
-    property: "og:url",
-    content: props.url || defaultOGURL
-  }), external__react__default.a.createElement("meta", {
-    property: "og:title",
-    content: props.title || ''
-  }), external__react__default.a.createElement("meta", {
-    property: "og:description",
-    content: props.description || defaultDescription
-  }), external__react__default.a.createElement("meta", {
-    name: "twitter:site",
-    content: props.url || defaultOGURL
-  }), external__react__default.a.createElement("meta", {
-    name: "twitter:card",
-    content: "summary_large_image"
-  }), external__react__default.a.createElement("meta", {
-    name: "twitter:image",
-    content: props.ogImage || defaultOGImage
-  }), external__react__default.a.createElement("meta", {
-    property: "og:image",
-    content: props.ogImage || defaultOGImage
-  }), external__react__default.a.createElement("meta", {
-    property: "og:image:width",
-    content: "1200"
-  }), external__react__default.a.createElement("meta", {
-    property: "og:image:height",
-    content: "630"
-  }));
-};
-
-/* harmony default export */ var head = (head_Head);
-// EXTERNAL MODULE: external "styled-components"
-var external__styled_components_ = __webpack_require__(6);
-var external__styled_components__default = /*#__PURE__*/__webpack_require__.n(external__styled_components_);
-
-// CONCATENATED MODULE: ./components/Login/LoginContainer.js
 var _templateObject = /*#__PURE__*/ _taggedTemplateLiteral(["\nposition: fixed;\nwidth: 100%;\nheight: 100vh;\nbackground-image: url('/static/chicago2.PNG');\nbackground-size: cover;\nbackground-position: right 0px;\nfont-family: Roboto, sans-serif;\n"]),
-    _templateObject2 = /*#__PURE__*/ _taggedTemplateLiteral(["\n  margin: 50vh 30px 0 30px;\n  width: 35% ;\n  vertical-align: middle;\n  padding: 10px;\n"]),
-    _templateObject3 = /*#__PURE__*/ _taggedTemplateLiteral(["\n  width: 100%;\n  background-color : rgba(26, 25, 25, 0.85);\n  padding: 10px;\n  color: white;\n  border-radius: 10px\n"]),
-    _templateObject4 = /*#__PURE__*/ _taggedTemplateLiteral(["\n  width: 85%;\n  height : 30px;\n  margin: 5px 0;\n"]),
-    _templateObject5 = /*#__PURE__*/ _taggedTemplateLiteral(["\n  width: 85%;\n  height : 30px;\n  background-color : rgb(0, 155, 0);\n  color: white;\n"]),
-    _templateObject6 = /*#__PURE__*/ _taggedTemplateLiteral(["\ncolor: white;\nfont-size: 12px;\nposition: fixed;\nbottom: 10px;\nleft : 15px\n"]),
-    _templateObject7 = /*#__PURE__*/ _taggedTemplateLiteral(["\nfloat: left;\nmargin: 8px 50px 8px 8px\n"]),
-    _templateObject8 = /*#__PURE__*/ _taggedTemplateLiteral(["\nwidth: 20%;\nfloat: right;\nmargin: 20px 35px\n"]),
-    _templateObject9 = /*#__PURE__*/ _taggedTemplateLiteral(["\nwidth : 100%\n"]);
+    _templateObject2 = /*#__PURE__*/ _taggedTemplateLiteral(["\nfont-size: 25px;\nwidth: 50%;\npadding: 30px;\nmargin : 0 auto;\ntext-align : center;\nbackground-color : #f5f5f5e6;\ncolor: #0d203d;\n"]),
+    _templateObject3 = /*#__PURE__*/ _taggedTemplateLiteral(["\n  margin: 50vh 30px 0 30px;\n  width: 35% ;\n  vertical-align: middle;\n  padding: 10px;\n"]),
+    _templateObject4 = /*#__PURE__*/ _taggedTemplateLiteral(["\n  width: 100%;\n  background-color : rgba(26, 25, 25, 0.85);\n  padding: 10px;\n  color: white;\n  border-radius: 10px\n"]),
+    _templateObject5 = /*#__PURE__*/ _taggedTemplateLiteral(["\n  width: 85%;\n  height : 30px;\n  margin: 5px 0;\n"]),
+    _templateObject6 = /*#__PURE__*/ _taggedTemplateLiteral(["\n  width: 85%;\n  height : 30px;\n  background-color : rgb(0, 155, 0);\n  color: white;\n"]),
+    _templateObject7 = /*#__PURE__*/ _taggedTemplateLiteral(["\ncolor: white;\nfont-family: Roboto, sans-serif;\nfont-size: 12px;\nposition: fixed;\nbottom: 10px;\nleft : 15px\n"]),
+    _templateObject8 = /*#__PURE__*/ _taggedTemplateLiteral(["\nfloat: left;\nmargin: 8px 50px 8px 8px\n"]),
+    _templateObject9 = /*#__PURE__*/ _taggedTemplateLiteral(["\nwidth: 20%;\nfloat: right;\nmargin: 20px 35px\n"]),
+    _templateObject10 = /*#__PURE__*/ _taggedTemplateLiteral(["\nwidth : 100%\n"]);
 
 function _typeof(obj) { if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
 
@@ -200,17 +114,18 @@ function _taggedTemplateLiteral(strings, raw) { if (!raw) { raw = strings.slice(
 
 
 
-var LoginScreen = external__styled_components__default.a.div(_templateObject);
-var LoginBox = external__styled_components__default.a.div(_templateObject2);
-var LoginForm = external__styled_components__default.a.form(_templateObject3);
-var LoginInput = external__styled_components__default.a.input(_templateObject4);
-var LoginButton = external__styled_components__default.a.button(_templateObject5);
-var Footer = external__styled_components__default.a.footer(_templateObject6);
-var LoginHeader = external__styled_components__default.a.p(_templateObject7);
-var HbkLogoImg = external__styled_components__default.a.img(_templateObject8);
-var HbkWhereImg = external__styled_components__default.a.img(_templateObject9);
+var LoginScreen = __WEBPACK_IMPORTED_MODULE_1_styled_components___default.a.div(_templateObject);
+var NewLookModal = __WEBPACK_IMPORTED_MODULE_1_styled_components___default.a.div(_templateObject2);
+var LoginBox = __WEBPACK_IMPORTED_MODULE_1_styled_components___default.a.div(_templateObject3);
+var LoginForm = __WEBPACK_IMPORTED_MODULE_1_styled_components___default.a.form(_templateObject4);
+var LoginInput = __WEBPACK_IMPORTED_MODULE_1_styled_components___default.a.input(_templateObject5);
+var LoginButton = __WEBPACK_IMPORTED_MODULE_1_styled_components___default.a.button(_templateObject6);
+var Footer = __WEBPACK_IMPORTED_MODULE_1_styled_components___default.a.footer(_templateObject7);
+var LoginHeader = __WEBPACK_IMPORTED_MODULE_1_styled_components___default.a.p(_templateObject8);
+var HbkLogoImg = __WEBPACK_IMPORTED_MODULE_1_styled_components___default.a.img(_templateObject9);
+var HbkWhereImg = __WEBPACK_IMPORTED_MODULE_1_styled_components___default.a.img(_templateObject10);
 
-var LoginContainer_LoginContainer =
+var LoginContainer =
 /*#__PURE__*/
 function (_Component) {
   _inherits(LoginContainer, _Component);
@@ -225,7 +140,8 @@ function (_Component) {
       error: null,
       isLoaded: false,
       username: '',
-      password: ''
+      password: '',
+      firstVisit: true
     };
     return _this;
   }
@@ -233,9 +149,23 @@ function (_Component) {
   _createClass(LoginContainer, [{
     key: "componentDidMount",
     value: function componentDidMount() {
+      if (localStorage.getItem("HBKWhereFirstVisit")) {
+        this.setState({
+          firstVisit: false
+        });
+      }
+
+      ;
       this.setState({
         isLoaded: true
       });
+    }
+  }, {
+    key: "handleFirstVisitClick",
+    value: function handleFirstVisitClick() {
+      this.setState({
+        firstVisit: false
+      }); // localStorage.setItem("HBKWhereFirstVisit", true);
     } // handleInputChange = (e) => {
     //   const { name, value } = e.target;
     //   this.setState({
@@ -246,65 +176,364 @@ function (_Component) {
   }, {
     key: "render",
     value: function render() {
+      var _this2 = this;
+
       var _state = this.state,
           error = _state.error,
           isLoaded = _state.isLoaded;
 
       if (error) {
-        return external__react__default.a.createElement("div", null, "Error: ", error.message);
+        return __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement("div", {
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 102
+          }
+        }, "Error: ", error.message);
       } else if (!isLoaded) {
-        return external__react__default.a.createElement("div", null, "Loading...");
+        return __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement("div", {
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 105
+          }
+        }, "Loading...");
       } else {
-        return external__react__default.a.createElement(LoginScreen, null, external__react__default.a.createElement(HbkLogoImg, {
+        return __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement("div", {
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 109
+          }
+        }, this.state.firstVisit ? __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(LoginScreen, {
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 111
+          }
+        }, __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(NewLookModal, {
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 112
+          }
+        }, __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement("h3", {
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 113
+          }
+        }, "Welcome to the New HBK Where Sign In Page"), __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement("p", {
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 114
+          }
+        }, "We\u2019ve enhanced the look of this page. Use your regular login information to enter."), __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement("p", {
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 115
+          }
+        }, "Questions? Click here to chat"), __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(LoginButton, {
+          onClick: function onClick() {
+            _this2.handleFirstVisitClick();
+          },
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 116
+          }
+        }, "Got it"))) : __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(LoginScreen, {
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 119
+          }
+        }, __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(HbkLogoImg, {
           src: "/static/hbkLogo.PNG",
-          alt: "hbkLogo"
-        }), external__react__default.a.createElement(LoginBox, null, external__react__default.a.createElement(HbkWhereImg, {
+          alt: "hbkLogo",
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 120
+          }
+        }), __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(LoginBox, {
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 121
+          }
+        }, __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(HbkWhereImg, {
           src: "/static/hbkWhereLogo.PNG",
-          alt: "hbkWhereLogo"
-        }), external__react__default.a.createElement(LoginForm, null, external__react__default.a.createElement(LoginHeader, null, "Sign In"), external__react__default.a.createElement(LoginInput, {
-          placeholder: 'Enter Username'
-        }), external__react__default.a.createElement(LoginInput, {
-          placeholder: 'Enter Password'
-        }), external__react__default.a.createElement(LoginButton, null, " Login "))), external__react__default.a.createElement(Footer, null, "\xA9 ", new Date().getFullYear(), " HBK Engineering, LLC | Version 2.1.6 |", external__react__default.a.createElement(link__default.a, {
+          alt: "hbkWhereLogo",
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 122
+          }
+        }), __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(LoginForm, {
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 123
+          }
+        }, __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(LoginHeader, {
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 124
+          }
+        }, "Sign In"), __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(LoginInput, {
+          placeholder: 'Enter Username',
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 125
+          }
+        }), __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(LoginInput, {
+          placeholder: 'Enter Password',
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 126
+          }
+        }), __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(LoginButton, {
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 127
+          }
+        }, " Login ")))), __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(Footer, {
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 132
+          }
+        }, "\xA9 ", new Date().getFullYear(), " HBK Engineering, LLC | Version 2.1.6 |", __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_2_next_link___default.a, {
           href: "http://help.hbkapps.com/",
-          target: "_blank"
-        }, external__react__default.a.createElement("a", null, "Help"))));
+          target: "_blank",
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 134
+          }
+        }, __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement("a", {
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 134
+          }
+        }, "Help"))));
       }
     }
   }]);
 
   return LoginContainer;
-}(external__react_["Component"]);
+}(__WEBPACK_IMPORTED_MODULE_0_react__["Component"]);
 
-/* harmony default export */ var Login_LoginContainer = (LoginContainer_LoginContainer);
-// CONCATENATED MODULE: ./pages/index.js
+/* harmony default export */ __webpack_exports__["a"] = (LoginContainer);
+
+/***/ }),
+
+/***/ "./components/head.js":
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_react__ = __webpack_require__("react");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_react___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_react__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_next_head__ = __webpack_require__("next/head");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_next_head___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_1_next_head__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_prop_types__ = __webpack_require__("prop-types");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_prop_types___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_2_prop_types__);
+var _jsxFileName = "/Users/codisteinborn/Desktop/Github/login-page/hbkwherelogin/components/head.js";
+
+
+
+var defaultDescription = '';
+var defaultOGURL = '';
+var defaultOGImage = '';
+
+var Head = function Head(props) {
+  return __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_1_next_head___default.a, {
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 9
+    }
+  }, __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement("meta", {
+    charSet: "UTF-8",
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 10
+    }
+  }), __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement("title", {
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 11
+    }
+  }, props.title || ''), __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement("meta", {
+    name: "description",
+    content: props.description || defaultDescription,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 12
+    }
+  }), __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement("meta", {
+    name: "viewport",
+    content: "width=device-width, initial-scale=1",
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 13
+    }
+  }), __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement("link", {
+    rel: "icon",
+    href: "/static/where-favicon.png",
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 14
+    }
+  }), __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement("link", {
+    href: "https://fonts.googleapis.com/css?family=Roboto",
+    rel: "stylesheet",
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 15
+    }
+  }), __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement("meta", {
+    property: "og:url",
+    content: props.url || defaultOGURL,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 16
+    }
+  }), __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement("meta", {
+    property: "og:title",
+    content: props.title || '',
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 17
+    }
+  }), __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement("meta", {
+    property: "og:description",
+    content: props.description || defaultDescription,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 18
+    }
+  }), __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement("meta", {
+    name: "twitter:site",
+    content: props.url || defaultOGURL,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 19
+    }
+  }), __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement("meta", {
+    name: "twitter:card",
+    content: "summary_large_image",
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 20
+    }
+  }), __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement("meta", {
+    name: "twitter:image",
+    content: props.ogImage || defaultOGImage,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 21
+    }
+  }), __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement("meta", {
+    property: "og:image",
+    content: props.ogImage || defaultOGImage,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 22
+    }
+  }), __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement("meta", {
+    property: "og:image:width",
+    content: "1200",
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 23
+    }
+  }), __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement("meta", {
+    property: "og:image:height",
+    content: "630",
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 24
+    }
+  }));
+};
+
+Head.propTypes = {
+  title: __WEBPACK_IMPORTED_MODULE_2_prop_types__["string"],
+  description: __WEBPACK_IMPORTED_MODULE_2_prop_types__["string"],
+  url: __WEBPACK_IMPORTED_MODULE_2_prop_types__["string"],
+  ogImage: __WEBPACK_IMPORTED_MODULE_2_prop_types__["string"]
+};
+/* harmony default export */ __webpack_exports__["a"] = (Head);
+
+/***/ }),
+
+/***/ "./pages/index.js":
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_react__ = __webpack_require__("react");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_react___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_react__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_next_link__ = __webpack_require__("next/link");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_next_link___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_1_next_link__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__components_head__ = __webpack_require__("./components/head.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__components_Login_LoginContainer__ = __webpack_require__("./components/Login/LoginContainer.js");
+var _jsxFileName = "/Users/codisteinborn/Desktop/Github/login-page/hbkwherelogin/pages/index.js";
 
 
 
 
-/* harmony default export */ var pages = __webpack_exports__["default"] = (function () {
-  return external__react__default.a.createElement("div", null, external__react__default.a.createElement(head, {
-    title: "Home"
-  }), external__react__default.a.createElement(Login_LoginContainer, null));
+/* harmony default export */ __webpack_exports__["default"] = (function () {
+  return __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement("div", {
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 6
+    }
+  }, __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_2__components_head__["a" /* default */], {
+    title: "HBK Login",
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 7
+    }
+  }), __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_3__components_Login_LoginContainer__["a" /* default */], {
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 8
+    }
+  }));
 });
 
 /***/ }),
-/* 4 */
+
+/***/ 3:
+/***/ (function(module, exports, __webpack_require__) {
+
+module.exports = __webpack_require__("./pages/index.js");
+
+
+/***/ }),
+
+/***/ "next/head":
 /***/ (function(module, exports) {
 
 module.exports = require("next/head");
 
 /***/ }),
-/* 5 */
+
+/***/ "next/link":
+/***/ (function(module, exports) {
+
+module.exports = require("next/link");
+
+/***/ }),
+
+/***/ "prop-types":
 /***/ (function(module, exports) {
 
 module.exports = require("prop-types");
 
 /***/ }),
-/* 6 */
+
+/***/ "react":
+/***/ (function(module, exports) {
+
+module.exports = require("react");
+
+/***/ }),
+
+/***/ "styled-components":
 /***/ (function(module, exports) {
 
 module.exports = require("styled-components");
 
 /***/ })
-/******/ ]);
+
+/******/ });
+//# sourceMappingURL=index.js.map
