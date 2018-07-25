@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import styled from 'styled-components';
-import Link from 'next/link'
+import Link from 'next/link';
+import Intercom from 'react-intercom';
 
 const LoginScreen = styled.div`
 position: fixed;
@@ -11,6 +12,14 @@ background-size: cover;
 background-position: right 0px;
 font-family: Roboto, sans-serif;
 `;
+const NewLookModal = styled.div`
+width: 50%;
+padding: 30px;
+margin : 50px auto;
+text-align : center;
+background-color : #f5f5f5e6;
+color: #0d203d;
+`
 const LoginBox = styled.div`
   margin: 50vh 30px 0 30px;
   width: 35% ;
@@ -37,6 +46,7 @@ const LoginButton = styled.button`
 `;
 const Footer = styled.footer`
 color: white;
+font-family: Roboto, sans-serif;
 font-size: 12px;
 position: fixed;
 bottom: 10px;
@@ -47,7 +57,7 @@ float: left;
 margin: 8px 50px 8px 8px
 `;
 const HbkLogoImg = styled.img`
-width: 20%;
+width: 35%;
 float: right;
 margin: 20px 35px
 `;
@@ -63,14 +73,30 @@ class LoginContainer extends Component {
       error: null,
       isLoaded: false,
       username: '',
-      password: ''
+      password: '',
+      firstVisit: true,
+      appUser: {
+        id: '',
+        email: '',
+        name: ''
+      }
     }
   }
 
   componentDidMount() {
-    this.setState({ isLoaded: true })
+    if (localStorage.getItem("HBKWhereFirstVisit")) {
+      this.setState({ firstVisit: false })
+    };
+    this.setState({ isLoaded: true });
+  //   window.Intercom('boot', {
+  //     app_id: 'gwrahg7n'
+  //  });
   }
 
+  handleFirstVisitClick() {
+    this.setState({ firstVisit: false });
+    // localStorage.setItem("HBKWhereFirstVisit", true);
+  }
   // handleInputChange = (e) => {
   //   const { name, value } = e.target;
   //   this.setState({
@@ -87,23 +113,55 @@ class LoginContainer extends Component {
       return <div>Loading...</div>;
     }
     else {
+      //code from https://www.npmjs.com/package/react-intercom
+      // const { appUser } = this.props;
+    
+      const user = {
+        user_id: 'csteinborn',
+        email: 'csteinborn@hbkapps.com',
+        name: 'Codi'
+      };    
+      // const user = {
+      //   user_id: this.state.appUser.id,
+        // email: this.state.appUser.email,
+        // name: this.state.appUser.name
+        // user_id: 'csteinborn',
+      //   email: this.state.appUser.email,
+      //   name: this.state.appUser.name
+      // };
+
       return (
-        <LoginScreen>
-          <HbkLogoImg src='/static/hbkLogo.PNG' alt='hbkLogo'/>
-          <LoginBox>
-            <HbkWhereImg src='/static/hbkWhereLogo.PNG' alt='hbkWhereLogo'/>
-            <LoginForm>
-              <LoginHeader>Sign In</LoginHeader>
-              <LoginInput placeholder={'Enter Username'} />
-              <LoginInput placeholder={'Enter Password'} />
-              <LoginButton> Login </LoginButton>
-            </LoginForm>
-          </LoginBox>
+        <div>
+          {this.state.firstVisit ?
+            <LoginScreen>
+              <NewLookModal>
+                <h3>Welcome to the New HBK Where Sign In Page</h3>
+                <p>We’ve enhanced the look of this page. Use your existing login information to enter.</p>
+                <p>Questions? Click here to chat</p>
+                <div>Intercom
+              <Intercom appID="gwrahg7n" { ...user }> Intercom HERE</Intercom>
+              </div>
+                <LoginButton onClick={() => { this.handleFirstVisitClick() }}>GOT IT</LoginButton>
+              </NewLookModal>
+            </LoginScreen> :
+            <LoginScreen>
+              <HbkLogoImg src='/static/hbkLogo.PNG' alt='hbkLogo' />
+              <LoginBox>
+                <HbkWhereImg src='/static/hbkWhereLogo.PNG' alt='hbkWhereLogo' />
+                <LoginForm>
+                  <LoginHeader>Sign In</LoginHeader>
+                  <LoginInput placeholder={'Enter Username'} />
+                  <LoginInput placeholder={'Enter Password'} />
+                  <LoginButton> LOGIN </LoginButton>
+                </LoginForm>
+              </LoginBox>
+            </LoginScreen>
+          }
           <Footer>
             &copy; {new Date().getFullYear()} HBK Engineering, LLC | Version 2.1.6 |
                 <Link href="http://help.hbkapps.com/" target="_blank"><a>Help</a></Link>
           </Footer>
-        </LoginScreen>
+        </div>
       );
     }
   }
