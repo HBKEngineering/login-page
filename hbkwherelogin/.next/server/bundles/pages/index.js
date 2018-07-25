@@ -82,6 +82,8 @@ module.exports =
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_styled_components___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_1_styled_components__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_next_link__ = __webpack_require__("next/link");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_next_link___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_2_next_link__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_react_intercom__ = __webpack_require__("react-intercom");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_react_intercom___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_3_react_intercom__);
 var _jsxFileName = "/Users/codisteinborn/Desktop/Github/login-page/hbkwherelogin/components/Login/LoginContainer.js";
 
 var _templateObject = /*#__PURE__*/ _taggedTemplateLiteral(["\nposition: fixed;\nwidth: 100%;\nheight: 100vh;\nbackground-image: url('/static/chicago2.PNG');\nbackground-size: cover;\nbackground-position: right 0px;\nfont-family: Roboto, sans-serif;\n"]),
@@ -92,10 +94,12 @@ var _templateObject = /*#__PURE__*/ _taggedTemplateLiteral(["\nposition: fixed;\
     _templateObject6 = /*#__PURE__*/ _taggedTemplateLiteral(["\n  width: 85%;\n  height : 30px;\n  background-color : rgb(0, 155, 0);\n  color: white;\n"]),
     _templateObject7 = /*#__PURE__*/ _taggedTemplateLiteral(["\ncolor: white;\nfont-family: Roboto, sans-serif;\nfont-size: 12px;\nposition: fixed;\nbottom: 10px;\nleft : 15px\n"]),
     _templateObject8 = /*#__PURE__*/ _taggedTemplateLiteral(["\nfloat: left;\nmargin: 8px 50px 8px 8px\n"]),
-    _templateObject9 = /*#__PURE__*/ _taggedTemplateLiteral(["\nwidth: 20%;\nfloat: right;\nmargin: 20px 35px\n"]),
+    _templateObject9 = /*#__PURE__*/ _taggedTemplateLiteral(["\nwidth: 35%;\nfloat: right;\nmargin: 20px 35px\n"]),
     _templateObject10 = /*#__PURE__*/ _taggedTemplateLiteral(["\nwidth : 100%\n"]);
 
 function _typeof(obj) { if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
+
+function _extends() { _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; }; return _extends.apply(this, arguments); }
 
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
 
@@ -110,6 +114,7 @@ function _assertThisInitialized(self) { if (self === void 0) { throw new Referen
 function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function"); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
 
 function _taggedTemplateLiteral(strings, raw) { if (!raw) { raw = strings.slice(0); } return Object.freeze(Object.defineProperties(strings, { raw: { value: Object.freeze(raw) } })); }
+
 
 
 
@@ -141,7 +146,12 @@ function (_Component) {
       isLoaded: false,
       username: '',
       password: '',
-      firstVisit: true
+      firstVisit: true,
+      appUser: {
+        id: '',
+        email: '',
+        name: ''
+      }
     };
     return _this;
   }
@@ -158,7 +168,9 @@ function (_Component) {
       ;
       this.setState({
         isLoaded: true
-      });
+      }); //   window.Intercom('boot', {
+      //     app_id: 'gwrahg7n'
+      //  });
     }
   }, {
     key: "handleFirstVisitClick",
@@ -186,122 +198,149 @@ function (_Component) {
         return __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement("div", {
           __source: {
             fileName: _jsxFileName,
-            lineNumber: 101
+            lineNumber: 110
           }
         }, "Error: ", error.message);
       } else if (!isLoaded) {
         return __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement("div", {
           __source: {
             fileName: _jsxFileName,
-            lineNumber: 104
+            lineNumber: 113
           }
         }, "Loading...");
       } else {
+        //code from https://www.npmjs.com/package/react-intercom
+        // const { appUser } = this.props;
+        var user = {
+          user_id: 'csteinborn',
+          email: 'csteinborn@hbkapps.com',
+          name: 'Codi'
+        }; // const user = {
+        //   user_id: this.state.appUser.id,
+        // email: this.state.appUser.email,
+        // name: this.state.appUser.name
+        // user_id: 'csteinborn',
+        //   email: this.state.appUser.email,
+        //   name: this.state.appUser.name
+        // };
+
         return __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement("div", {
           __source: {
             fileName: _jsxFileName,
-            lineNumber: 108
+            lineNumber: 134
           }
         }, this.state.firstVisit ? __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(LoginScreen, {
           __source: {
             fileName: _jsxFileName,
-            lineNumber: 110
+            lineNumber: 136
           }
         }, __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(NewLookModal, {
           __source: {
             fileName: _jsxFileName,
-            lineNumber: 111
+            lineNumber: 137
           }
         }, __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement("h3", {
           __source: {
             fileName: _jsxFileName,
-            lineNumber: 112
+            lineNumber: 138
           }
         }, "Welcome to the New HBK Where Sign In Page"), __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement("p", {
           __source: {
             fileName: _jsxFileName,
-            lineNumber: 113
+            lineNumber: 139
           }
-        }, "We\u2019ve enhanced the look of this page. Use your regular login information to enter."), __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement("p", {
+        }, "We\u2019ve enhanced the look of this page. Use your existing login information to enter."), __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement("p", {
           __source: {
             fileName: _jsxFileName,
-            lineNumber: 114
+            lineNumber: 140
           }
-        }, "Questions? Click here to chat"), __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(LoginButton, {
+        }, "Questions? Click here to chat"), __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement("div", {
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 141
+          }
+        }, "Intercom", __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_3_react_intercom___default.a, _extends({
+          appID: "gwrahg7n"
+        }, user, {
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 142
+          }
+        }), " Intercom HERE")), __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(LoginButton, {
           onClick: function onClick() {
             _this2.handleFirstVisitClick();
           },
           __source: {
             fileName: _jsxFileName,
-            lineNumber: 115
+            lineNumber: 144
           }
-        }, "Got it"))) : __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(LoginScreen, {
+        }, "GOT IT"))) : __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(LoginScreen, {
           __source: {
             fileName: _jsxFileName,
-            lineNumber: 118
+            lineNumber: 147
           }
         }, __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(HbkLogoImg, {
           src: "/static/hbkLogo.PNG",
           alt: "hbkLogo",
           __source: {
             fileName: _jsxFileName,
-            lineNumber: 119
+            lineNumber: 148
           }
         }), __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(LoginBox, {
           __source: {
             fileName: _jsxFileName,
-            lineNumber: 120
+            lineNumber: 149
           }
         }, __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(HbkWhereImg, {
           src: "/static/hbkWhereLogo.PNG",
           alt: "hbkWhereLogo",
           __source: {
             fileName: _jsxFileName,
-            lineNumber: 121
+            lineNumber: 150
           }
         }), __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(LoginForm, {
           __source: {
             fileName: _jsxFileName,
-            lineNumber: 122
+            lineNumber: 151
           }
         }, __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(LoginHeader, {
           __source: {
             fileName: _jsxFileName,
-            lineNumber: 123
+            lineNumber: 152
           }
         }, "Sign In"), __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(LoginInput, {
           placeholder: 'Enter Username',
           __source: {
             fileName: _jsxFileName,
-            lineNumber: 124
+            lineNumber: 153
           }
         }), __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(LoginInput, {
           placeholder: 'Enter Password',
           __source: {
             fileName: _jsxFileName,
-            lineNumber: 125
+            lineNumber: 154
           }
         }), __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(LoginButton, {
           __source: {
             fileName: _jsxFileName,
-            lineNumber: 126
+            lineNumber: 155
           }
-        }, " Login ")))), __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(Footer, {
+        }, " LOGIN ")))), __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(Footer, {
           __source: {
             fileName: _jsxFileName,
-            lineNumber: 131
+            lineNumber: 160
           }
         }, "\xA9 ", new Date().getFullYear(), " HBK Engineering, LLC | Version 2.1.6 |", __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_2_next_link___default.a, {
           href: "http://help.hbkapps.com/",
           target: "_blank",
           __source: {
             fileName: _jsxFileName,
-            lineNumber: 133
+            lineNumber: 162
           }
         }, __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement("a", {
           __source: {
             fileName: _jsxFileName,
-            lineNumber: 133
+            lineNumber: 162
           }
         }, "Help"))));
       }
@@ -525,6 +564,13 @@ module.exports = require("prop-types");
 /***/ (function(module, exports) {
 
 module.exports = require("react");
+
+/***/ }),
+
+/***/ "react-intercom":
+/***/ (function(module, exports) {
+
+module.exports = require("react-intercom");
 
 /***/ }),
 
