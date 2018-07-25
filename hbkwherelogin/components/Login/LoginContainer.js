@@ -53,13 +53,15 @@ const LoginForm = styled.form`
 const UsernameInput = styled.input`
   margin: 5px 0;
   grid-row : 2;
+  border: none;
   @media (max-width: 1025px) {
     grid-column: 2
   }
 `;
 const PasswordInput = styled.input`
   margin: 5px 0;
-  grid-row : 3
+  grid-row : 3;
+  border: none;
   @media (max-width: 1025px) {
     grid-column: 2
   }
@@ -67,6 +69,7 @@ const PasswordInput = styled.input`
 const LoginButton = styled.button`
   background-color : rgb(0, 155, 0);
   color: white;
+  border: none;
   grid-row : 4
   @media (max-width: 1025px) {
     grid-column: 2;
@@ -76,6 +79,7 @@ const NewLookButton = styled.button`
   background-color : rgb(0, 155, 0);
   color: white;
   padding: 10px;
+  border: none;
   @media (max-width: 1025px) {
     grid-column: 2;
   }
