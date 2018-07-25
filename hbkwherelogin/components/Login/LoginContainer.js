@@ -11,38 +11,67 @@ background-image: url('/static/chicago2.PNG');
 background-size: cover;
 background-position: right 0px;
 font-family: Roboto, sans-serif;
+display: grid;
+grid-template-columns: 25% 25% 25% 25%;
+grid-template-rows: 25% 25% 25% 25%;
 `;
 const NewLookModal = styled.div`
-width: 50%;
-padding: 30px;
-margin : 50px auto;
+grid-row: 2;
+grid-column: 2 / span 2 ;
 text-align : center;
+padding: 18px;
 background-color : #f5f5f5e6;
 color: #0d203d;
 `
 const LoginBox = styled.div`
-  margin: 50vh 30px 0 30px;
-  width: 35% ;
-  vertical-align: middle;
-  padding: 10px;
+  grid-row: 3 / span 2;
+  grid-column: 1;
+  align-content: center;
+
+  @media (max-width: 1025px) {
+    grid-row: 2 / span 2;
+    grid-column: 2 / span 2;
+  }
 `;
 const LoginForm = styled.form`
-  width: 100%;
+  height: 50%
   background-color : rgba(26, 25, 25, 0.85);
-  padding: 10px;
+  padding: 15px;
   color: white;
-  border-radius: 10px
+  border-radius: 10px;
+  display: grid;
+  grid-template-columns: auto;
+  grid-template-rows: 20% 20% 20% 20% 20%;
+  
+  @media (max-width: 1025px) {
+    width: 100%;
+    padding : 0px;
+    text-align : center;
+    grid-template-columns: 15% 70% 15%
+  }
 `;
-const LoginInput = styled.input`
-  width: 85%;
-  height : 30px;
+const UsernameInput = styled.input`
   margin: 5px 0;
+  grid-row : 2;
+  @media (max-width: 1025px) {
+    grid-column: 2
+  }
+`;
+const PasswordInput = styled.input`
+  margin: 5px 0;
+  grid-row : 3
+  @media (max-width: 1025px) {
+    grid-column: 2
+  }
 `;
 const LoginButton = styled.button`
-  width: 85%;
-  height : 30px;
   background-color : rgb(0, 155, 0);
+  padding: 10px;
   color: white;
+  grid-row : 4
+  @media (max-width: 1025px) {
+    grid-column: 2
+  }
 `;
 const Footer = styled.footer`
 color: white;
@@ -52,17 +81,27 @@ position: fixed;
 bottom: 10px;
 left : 15px
 `;
-const LoginHeader = styled.p`
-float: left;
-margin: 8px 50px 8px 8px
+const SignInHeader = styled.p`
+grid-row : 1;
+grid-column : 1;
+@media (max-width: 1025px) {
+  font-size : 15px;
+  grid-column: 2
+}
+`;
+const Questions = styled.p`
+grid-row : 5
+@media (max-width: 1025px) {
+  grid-column: 1 / span 3
+}
 `;
 const HbkLogoImg = styled.img`
-width: 35%;
-float: right;
-margin: 20px 35px
+width: 92%;
+grid-row: 1;
+grid-column: 3 / span 2;
 `;
 const HbkWhereImg = styled.img`
-width : 100%
+width : 100%;
 `;
 
 
@@ -117,9 +156,9 @@ class LoginContainer extends Component {
       // const { appUser } = this.props;
     
       const user = {
-        user_id: 'csteinborn',
-        email: 'csteinborn@hbkapps.com',
-        name: 'Codi'
+        user_id: '',
+        email: '',
+        name: ''
       };    
       // const user = {
       //   user_id: this.state.appUser.id,
@@ -137,10 +176,6 @@ class LoginContainer extends Component {
               <NewLookModal>
                 <h3>Welcome to the New HBK Where Sign In Page</h3>
                 <p>We’ve enhanced the look of this page. Use your existing login information to enter.</p>
-                <p>Questions? Click here to chat</p>
-                <div>Intercom
-              <Intercom appID="gwrahg7n" { ...user }> Intercom HERE</Intercom>
-              </div>
                 <LoginButton onClick={() => { this.handleFirstVisitClick() }}>GOT IT</LoginButton>
               </NewLookModal>
             </LoginScreen> :
@@ -149,10 +184,14 @@ class LoginContainer extends Component {
               <LoginBox>
                 <HbkWhereImg src='/static/hbkWhereLogo.PNG' alt='hbkWhereLogo' />
                 <LoginForm>
-                  <LoginHeader>Sign In</LoginHeader>
-                  <LoginInput placeholder={'Enter Username'} />
-                  <LoginInput placeholder={'Enter Password'} />
+                  <SignInHeader>Sign In</SignInHeader>
+                  <UsernameInput placeholder={'Enter Username'} />
+                  <PasswordInput placeholder={'Enter Password'} />
                   <LoginButton> LOGIN </LoginButton>
+                  <Questions>
+                    Questions? Click here to chat.
+                  <Intercom appID="gwrahg7n" { ...user }> Intercom HERE</Intercom>
+                  </Questions>
                 </LoginForm>
               </LoginBox>
             </LoginScreen>
