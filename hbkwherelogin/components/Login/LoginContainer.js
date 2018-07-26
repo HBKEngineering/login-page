@@ -197,13 +197,18 @@ class LoginContainer extends Component {
 
   handleFirstVisitClick() {
     this.setState({ firstVisit: false });
-    // localStorage.setItem("HBKWhereFirstVisit", true);
+    //this would allow users who have already seen the new layout to skip the notification the next time they enter
+    localStorage.setItem("HBKWhereFirstVisit", true);
   }
   handleNeedHelpClick() {
     this.setState({ help: true });
   }
   handleHelpSubmit(){
+    //I doubt this is the best way to handle validation
+    if (this.state.IntercomEmail.includes('@') && this.state.IntercomName !== ''){
     this.setState({ intercom: true , help: false });
+    }
+    else {alert("Please enter your name and a valid email address to begin a chat with us.")}
   }
   handleHelpClose(){
     this.setState({ help: false });
@@ -224,7 +229,7 @@ class LoginContainer extends Component {
       return <div>Loading...</div>;
     }
     else {
-      //code from https://www.npmjs.com/package/react-intercom
+      //some code from https://www.npmjs.com/package/react-intercom
       const user = {
         user_id: '1234',
         username: 'unknown',
@@ -248,8 +253,8 @@ class LoginContainer extends Component {
                 <HbkWhereImg src='/static/hbkWhereLogo.PNG' alt='hbkWhereLogo' />
                 <LoginForm>
                   <SignInHeader>Sign In</SignInHeader>
-                  <UsernameInput placeholder='Enter Username'/>
-                  <PasswordInput placeholder='Enter Password' />
+                  <UsernameInput placeholder='Enter Username' name='Username' value={this.state.Username} onChange={this.handleInputChange}/>
+                  <PasswordInput placeholder='Enter Password' name='Password' value={this.state.Password} onChange={this.handleInputChange}/>
                   <LoginButton> LOGIN </LoginButton>
                   <Questions onClick={()=>{this.handleNeedHelpClick()}}>
                     Questions? Click here to chat.
