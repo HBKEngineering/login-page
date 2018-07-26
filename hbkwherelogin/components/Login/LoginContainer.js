@@ -22,6 +22,10 @@ text-align : center;
 padding: 18px;
 background-color : #f5f5f5e6;
 color: #0d203d;
+@media (max-width: 400px) {
+  grid-row: 2 / span 2;
+grid-column: 2 / span 2 
+}
 `
 const LoginBox = styled.div`
   grid-row: 3 / span 2;
@@ -31,6 +35,10 @@ const LoginBox = styled.div`
   @media (max-width: 1025px) {
     grid-row: 2 / span 2;
     grid-column: 2 / span 2;
+  }
+  @media (max-width: 400px) {
+    grid-row: 2 / span 2;
+  grid-column: 1 / span 4 
   }
 `;
 const LoginForm = styled.form`
@@ -131,7 +139,11 @@ display: grid;
 grid-template-columns: auto;
 grid-template-rows: auto auto auto auto;
 @media (max-width: 1025px) {
-  height: 100%
+  height: 350px
+}
+@media (max-width: 400px) {
+  grid-row: 2 / span 2;
+grid-column: 1 / span 4 
 }
 `;
 const IntercomNameInput = styled.input`
