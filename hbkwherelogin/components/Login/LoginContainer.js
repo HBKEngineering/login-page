@@ -123,7 +123,10 @@ cursor: pointer
 const HbkLogoImg = styled.img`
 width: 92%;
 grid-row: 1;
-grid-column: 3 / span 2;
+grid-column: 4 / span 1;
+@media (max-width: 1025px) {
+  grid-column: 3 / span 2;
+}
 `;
 const HbkWhereImg = styled.img`
 width : 100%;
@@ -184,7 +187,8 @@ class LoginContainer extends Component {
       help: false,
       intercom: false,
       IntercomEmail: '',
-      IntercomName: ''
+      IntercomName: '',
+      IntercomUserID: '',
     }
   }
 
@@ -206,7 +210,7 @@ class LoginContainer extends Component {
   handleHelpSubmit(){
     //I doubt this is the best way to handle validation
     if (this.state.IntercomEmail.includes('@') && this.state.IntercomName !== ''){
-    this.setState({ intercom: true , help: false });
+    this.setState({ IntercomUserID : this.state.IntercomName , intercom: true , help: false });
     }
     else {alert("Please enter your name and a valid email address to begin a chat with us.")}
   }
