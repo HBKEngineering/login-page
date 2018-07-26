@@ -119,6 +119,32 @@ grid-column: 3 / span 2;
 const HbkWhereImg = styled.img`
 width : 100%;
 `;
+const QuestionsModal = styled.div`
+grid-row: 2;
+grid-column: 2 / span 2 ;
+text-align : center;
+padding: 18px;
+background-color : #f5f5f5e6;
+color: #0d203d;
+display: grid;
+grid-template-columns: auto;
+grid-template-rows: auto auto auto auto;
+`;
+const QuestionInput = styled.input`
+
+`;
+const SubmitQuestionButton = styled.button`
+background-color : rgb(0, 155, 0);
+color: white;
+border: none;
+grid-row : 3
+`;
+const CloseQuestionButton = styled.button`
+color: white;
+background-color: red;
+border: none;
+grid-row : 4
+`
 
 
 class LoginContainer extends Component {
@@ -130,11 +156,10 @@ class LoginContainer extends Component {
       username: '',
       password: '',
       firstVisit: true,
-      appUser: {
-        id: '',
-        email: '',
-        name: ''
-      }
+      help: false,
+      intercom: false,
+      IntercomEmail: '',
+      IntercomName: ''
     }
   }
 
@@ -143,21 +168,27 @@ class LoginContainer extends Component {
       this.setState({ firstVisit: false })
     };
     this.setState({ isLoaded: true });
-    //   window.Intercom('boot', {
-    //     app_id: 'gwrahg7n'
-    //  });
   }
 
   handleFirstVisitClick() {
     this.setState({ firstVisit: false });
     // localStorage.setItem("HBKWhereFirstVisit", true);
   }
-  // handleInputChange = (e) => {
-  //   const { name, value } = e.target;
-  //   this.setState({
-  //     [name]: value
-  //   });
-  // }
+  handleNeedHelpClick() {
+    this.setState({ help: true });
+  }
+  handleHelpSubmit(){
+    this.setState({ intercom: true });
+  }
+  handleHelpClose(){
+    this.setState({ help: false });
+  }
+  handleInputChange = (e) => {
+    const { name, value } = e.target;
+    this.setState({
+      [name]: value
+    });
+  }
 
   render() {
     const { error, isLoaded } = this.state;
@@ -169,21 +200,12 @@ class LoginContainer extends Component {
     }
     else {
       //code from https://www.npmjs.com/package/react-intercom
-      // const { appUser } = this.props;
-
       const user = {
-        user_id: '',
-        email: '',
-        name: ''
+        user_id: '1234',
+        username: 'unknown',
+        email: `${this.state.IntercomEmail}`,
+        name: `${this.state.IntercomName}`
       };
-      // const user = {
-      //   user_id: this.state.appUser.id,
-      // email: this.state.appUser.email,
-      // name: this.state.appUser.name
-      // user_id: 'csteinborn',
-      //   email: this.state.appUser.email,
-      //   name: this.state.appUser.name
-      // };
 
       return (
         <div>
@@ -201,15 +223,23 @@ class LoginContainer extends Component {
                 <HbkWhereImg src='/static/hbkWhereLogo.PNG' alt='hbkWhereLogo' />
                 <LoginForm>
                   <SignInHeader>Sign In</SignInHeader>
-                  <UsernameInput placeholder={`Enter Username`} />
-                  <PasswordInput placeholder={'Enter Password'} />
+                  <UsernameInput placeholder='Enter Username'/>
+                  <PasswordInput placeholder='Enter Password' />
                   <LoginButton> LOGIN </LoginButton>
-                  <Questions>
+                  <Questions onClick={()=>{this.handleNeedHelpClick()}}>
                     Questions? Click here to chat.
-                  <Intercom appID="gwrahg7n" {...user}> Intercom HERE</Intercom>
                   </Questions>
                 </LoginForm>
               </LoginBox>
+              {this.state.help ?
+              <QuestionsModal>
+                <QuestionInput placeholder='Enter Name' type='text' name='IntercomName' value={this.state.IntercomName} onChange={this.handleInputChange}/>
+                <QuestionInput placeholder='Enter Email'  name='IntercomEmail' value={this.state.IntercomEmail} onChange={this.handleInputChange} />
+                <SubmitQuestionButton onClick={()=>this.handleHelpSubmit()}>SUBMIT</SubmitQuestionButton>
+                <CloseQuestionButton onClick={()=>this.handleHelpClose()}>CLOSE</CloseQuestionButton>
+              </QuestionsModal> : ''}
+              {this.state.intercom ?
+              <Intercom appID='gwrahg7n' {...user}/> : ''}
             </LoginScreen>
           }
           <Footer>
