@@ -107,6 +107,7 @@ const Questions = styled.p`
 grid-row : 5;
 text-align : center;
 margin: auto;
+cursor: pointer
 @media (max-width: 1025px) {
   grid-column: 1 / span 3
 }
@@ -129,21 +130,33 @@ color: #0d203d;
 display: grid;
 grid-template-columns: auto;
 grid-template-rows: auto auto auto auto;
+@media (max-width: 1025px) {
+  height: 100%
+}
 `;
-const QuestionInput = styled.input`
-
+const IntercomNameInput = styled.input`
+margin: 5px;
+z-index: 100;
+`;
+const IntercomEmailInput = styled.input`
+margin: 5px;
+z-index: 100
 `;
 const SubmitQuestionButton = styled.button`
 background-color : rgb(0, 155, 0);
 color: white;
 border: none;
-grid-row : 3
+grid-row : 3;
+margin: 5px;
+z-index: 100
 `;
 const CloseQuestionButton = styled.button`
 color: white;
 background-color: red;
 border: none;
-grid-row : 4
+grid-row : 4;
+margin: 5px;
+z-index: 100
 `
 
 
@@ -178,7 +191,7 @@ class LoginContainer extends Component {
     this.setState({ help: true });
   }
   handleHelpSubmit(){
-    this.setState({ intercom: true });
+    this.setState({ intercom: true , help: false });
   }
   handleHelpClose(){
     this.setState({ help: false });
@@ -233,8 +246,8 @@ class LoginContainer extends Component {
               </LoginBox>
               {this.state.help ?
               <QuestionsModal>
-                <QuestionInput placeholder='Enter Name' type='text' name='IntercomName' value={this.state.IntercomName} onChange={this.handleInputChange}/>
-                <QuestionInput placeholder='Enter Email'  name='IntercomEmail' value={this.state.IntercomEmail} onChange={this.handleInputChange} />
+                <IntercomNameInput placeholder='Enter Name' name='IntercomName' value={this.state.IntercomName} onChange={this.handleInputChange}/>
+                <IntercomEmailInput placeholder='Enter Email'  name='IntercomEmail' value={this.state.IntercomEmail} onChange={this.handleInputChange} />
                 <SubmitQuestionButton onClick={()=>this.handleHelpSubmit()}>SUBMIT</SubmitQuestionButton>
                 <CloseQuestionButton onClick={()=>this.handleHelpClose()}>CLOSE</CloseQuestionButton>
               </QuestionsModal> : ''}
