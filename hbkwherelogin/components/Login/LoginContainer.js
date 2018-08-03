@@ -188,7 +188,7 @@ class LoginContainer extends Component {
       intercom: false,
       IntercomEmail: '',
       IntercomName: '',
-      IntercomUserID: '',
+      IntercomUserID: this.state.IntercomName
     }
   }
 
@@ -235,8 +235,8 @@ class LoginContainer extends Component {
     else {
       //some code from https://www.npmjs.com/package/react-intercom
       const user = {
-        user_id: '1234',
-        username: 'unknown',
+        user_id: `${this.state.IntercomName}`,
+        username: `${this.state.IntercomName}`,
         email: `${this.state.IntercomEmail}`,
         name: `${this.state.IntercomName}`
       };
