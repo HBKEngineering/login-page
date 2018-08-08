@@ -213,6 +213,9 @@ class LoginContainer extends Component {
     this.setState({ IntercomUserID : this.state.IntercomName , intercom: true , help: false });
     }
     else {alert("Please enter your name and a valid email address to begin a chat with us.")}
+  console.log(this.state.IntercomEmail , "email")
+  console.log(this.state.IntercomName, "name")
+  console.log( this.state.IntercomUserID, "id")
   }
   handleHelpClose(){
     this.setState({ help: false });
@@ -235,8 +238,8 @@ class LoginContainer extends Component {
     else {
       //some code from https://www.npmjs.com/package/react-intercom
       const user = {
-        user_id: '1234',
-        username: 'unknown',
+        user_id: `${this.state.IntercomEmail}`,
+        username: `${this.state.IntercomEmail}`,
         email: `${this.state.IntercomEmail}`,
         name: `${this.state.IntercomName}`
       };
