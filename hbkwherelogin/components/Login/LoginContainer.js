@@ -7,7 +7,7 @@ const LoginScreen = styled.div`
 position: fixed;
 width: 100%;
 height: 100vh;
-background-image: url('/static/chicago2.PNG');
+background-image: url('/static/backdrop-2.PNG');
 background-size: cover;
 background-position: right 0px;
 font-family: Roboto, sans-serif;
